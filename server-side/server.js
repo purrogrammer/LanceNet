@@ -10,7 +10,7 @@ const transactionsRoute = require('./routes/transactionsRoute')
 app.use('/api/users/' , userRoute)
 app.use('/api/transactions/' , transactionsRoute)
 
-const port = 5000 
+const port = process.env.port || 5000 
 
 if(process.env.NODE_ENV === 'production')
 {
