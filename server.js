@@ -9,7 +9,7 @@ const transactionsRoute = require('./routes/transactionsRoute')
 app.use('/api/users/' , userRoute)
 app.use('/api/transactions/' , transactionsRoute)
 
-const port = process.env.port || 5000 
+const port = process.env.PORT || 5001 
 
 if(process.env.NODE_ENV === 'production')
 {
@@ -19,7 +19,5 @@ if(process.env.NODE_ENV === 'production')
          res.sendFile(path.resolve(__dirname, 'client/build/index.html'))
      })
 }
-
-
 
 app.listen(port, () => console.log(`Node JS Server started at port ${port}!`))
