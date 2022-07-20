@@ -16,7 +16,7 @@ function Register() {
       message.success("Welcome--you're all set");
       setLoading(false);
     } catch (error) {
-      message.error("Something went wrong");
+      message.error("All fields are required");
       setLoading(false);
     }
   };

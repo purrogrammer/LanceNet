@@ -75,14 +75,7 @@ function Login() {
           </div>
         </div>
       </div>
-      <div className="footer d-flex justify-content-between align-items-center">
-        <div className="footer-container row">
-      
-          <div className="footer-text col">&copy;Marguerite Kennedy/M++ Creative Lab, {new Date().getFullYear()} </div>
-          
-        </div>
 
-      </div>
     </div>
   );
 }

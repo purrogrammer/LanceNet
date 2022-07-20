@@ -28,6 +28,14 @@ label , a{
     color: rgba(255, 255, 255, 0.836) !important;
 }
 
+.subhead {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: -14px;
+    margin-bottom: 1em;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.836);
+}
 .subhead2 {
     font-size: 18px;
     font-weight: 500;
