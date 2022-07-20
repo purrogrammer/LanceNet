@@ -37,13 +37,13 @@ function AddEditTransaction({
       setSelectedItemForEdit(null);
       setLoading(false);
     } catch (error) {
-      message.error("Please fill in required fields");
+      message.error("All fields are required");
       setLoading(false);
     }
   };
   return (
     <Modal
-      title={selectedItemForEdit ? "Edit Transaction" : "Add Transaction"}
+      title={selectedItemForEdit ? "Edit Entry" : "New Entry"}
       visible={showAddEditTransactionModal}
       onCancel={() => setShowAddEditTransactionModal(false)}
       footer={false}
@@ -55,11 +55,12 @@ function AddEditTransaction({
         onFinish={onFinish}
         initialValues={selectedItemForEdit}
       >
-        <Form.Item label="Amount $" name="amount">
-          <Input type="text" />
+  
+        <Form.Item label="$ Amount (USD)" name="amount">
+          <Input type="number" />
         </Form.Item>
 
-        <Form.Item label="Type" name="type">
+        <Form.Item label="Income/Expense" name="type">
           <Select>
             <Select.Option value="income">Income</Select.Option>
             <Select.Option value="expense">Expense</Select.Option>
@@ -69,28 +70,26 @@ function AddEditTransaction({
         <Form.Item label="Category" name="category">
           <Select>
             {" "}
+            <Select.Option value="Salary">Salary</Select.Option>
             <Select.Option value="Freelance">Freelance Income</Select.Option>
             <Select.Option value="Other">Other Income</Select.Option>
-            <Select.Option value="Meals">Business meals</Select.Option>            
-            <Select.Option value="Travel">Travel/Mileage</Select.Option>
-            <Select.Option value="Education">Professional Development</Select.Option>
-            <Select.Option value="Technology">Tech Hard/Software</Select.Option>
-            <Select.Option value="Office">Office</Select.Option>
-            <Select.Option value="Postage">Postage/Messenger</Select.Option>
+            <Select.Option value="Household">Home/Yard</Select.Option>            
+            <Select.Option value="Food">Food</Select.Option>                     
+            <Select.Option value="Transportation">Transportation</Select.Option>
+            <Select.Option value="Entertainment">Entertainment</Select.Option>
+             <Select.Option value="Technology">Technology</Select.Option>
+            <Select.Option value="Clothing">Clothing, etc.</Select.Option>
             <Select.Option value="Utilities">Utilities</Select.Option>
-            <Select.Option value="Marketing">Marketing</Select.Option>
+            <Select.Option value="Health">Health/Medical</Select.Option>
+            <Select.Option value="Vacation">Travel/Vacation</Select.Option>
             <Select.Option value="Tax">Taxes</Select.Option> 
-          <Select.Option value="Fees">Professional Fees</Select.Option>
+            <Select.Option value="Other-expense">Other Expense</Select.Option> 
 
           </Select>
         </Form.Item>
 
         <Form.Item label="Date" name="date">
           <Input type="date" />
-        </Form.Item>
-
-        <Form.Item label="Client" name="reference">
-          <Input type="text" />
         </Form.Item>
 
         <Form.Item label="Description" name="description">

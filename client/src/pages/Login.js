@@ -38,9 +38,12 @@ function Login() {
       {loading && <Spinner />}
       <div className="row justify-content-center align-items-center w-100 h-100">
         <div className="col-md-4">
-          <Form layout="vertical" onFinish={onFinish}>
-            <h1>Sign In</h1>
-    
+        <div>
+          <h1 className="tagline">$aveeNET</h1>
+          <p className="subhead mb-5">Know Where It Goes.</p>
+          <h2 className="subhead2">Sign In</h2>
+        </div>
+          <Form layout="vertical" onFinish={onFinish}>      
 
             <Form.Item label="Email" name="email">
               <Input />
@@ -48,17 +51,18 @@ function Login() {
             <Form.Item label="Password" name="password">
               <Input type="password" />
             </Form.Item>
-
-            <div className="d-flex justify-content-between align-items-center">
+           
+              <div className="d-flex justify-content-between align-items-center mt-3">
               <Link to="/register">
                 No account? <span className="underlined">Create one now</span>!
-              </Link>
+              </Link> 
               <button className="secondary" type="submit">
-                LOGIN
-              </button>
+                Sign In
+              </button> 
+                
             </div>
-          </Form>
-        </div>
+            </Form>  
+           </div>
         <div className="col-md-5">
           <div className="lottie">
             <lottie-player
@@ -70,6 +74,14 @@ function Login() {
             ></lottie-player>
           </div>
         </div>
+      </div>
+      <div className="footer d-flex justify-content-between align-items-center">
+        <div className="footer-container row">
+      
+          <div className="footer-text col">&copy;Marguerite Kennedy/M++ Creative Lab, {new Date().getFullYear()} </div>
+          
+        </div>
+
       </div>
     </div>
   );

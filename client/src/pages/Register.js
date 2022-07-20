@@ -30,8 +30,9 @@ function Register() {
   return (
     <div className="register">
       {loading && <Spinner />}
-      <div className="row justify-content-center align-items-center w-100 h-100">
-        <div className="col-md-5">
+      {/* <div className="row justify-content-center align-items-center w-100 h-100"> */}
+      <div className="row justify-content-center w-100">
+        <div className="col-md-6 ml-2 mr-2">
           <div className="lottie">
             <lottie-player
               src="https://assets3.lottiefiles.com/packages/lf20_06a6pf9i.json"
@@ -44,7 +45,9 @@ function Register() {
         </div>
         <div className="col-md-4">
           <Form layout="vertical" onFinish={onFinish}>
-            <h1>Create Your Free Account</h1>
+            <h1 className="tagline">$aveeNET</h1>
+            <p className="subhead">Know Where It Goes.</p>
+            <h2 className="subhead2 mt-4 mb-5">Create Your FREE Account</h2>
            
             <Form.Item label="Name" name="name">
               <Input />
@@ -54,15 +57,17 @@ function Register() {
             </Form.Item>
             <Form.Item label="Password" name="password">
               <Input type="password" />
-            </Form.Item>
-
-            <div className="d-flex justify-content-between align-items-center">
-              <Link to="/login">Have an account? <strong>Sign in</strong></Link>
+            </Form.Item>       
+          
+    
+              <div className="d-flex justify-content-between align-items-center">
+         
               <button className="secondary" type="submit">
                 Submit
-              </button>
-            </div>
+              </button>             
+            </div>         
           </Form>
+          <Link to="/login">Have an account? <strong>Sign in</strong></Link>
         </div>
       </div>
     </div>

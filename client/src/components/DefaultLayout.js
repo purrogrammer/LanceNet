@@ -24,7 +24,7 @@ function DefaultLayout(props) {
     <div className="layout">
       <div className="header d-flex justify-content-between align-items-center">
         <div>
-          <h1 className="logo">LanceNET$</h1>
+          <h1 className="logo">$aveeNET</h1>
           <p className="subhead">Know Where It Goes.</p>
         </div>
         <div>

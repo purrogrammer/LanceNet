@@ -32,17 +32,20 @@ function Analytics({ transactions }) {
     (totalexpenseTurnover / totalTurnover) * 100;
 
   const categories = [
-    "Freelance",
-    "Other",
-    "Meals",
-    "Travel",
-    "Education",
+     "Salary",
+     "Freelance",   
+     "Other",
+    "Household",
+    "Food",
+    "Transportation",
+    "Entertainment",
     "Technology",
-    "Office",
-    "Postage",
-    "Marketing",
+    "Clothing",
+    "Utilities",
+    "Health",
+    "Vacation",
     "Tax",
-    "Fees"
+    "Other-expense"
   ];
 
   return (
@@ -75,20 +78,20 @@ function Analytics({ transactions }) {
           <div className="transactions-count">
             <h4>In/Out Snapshot : </h4>
             <hr />
-            <h5 className="income-snap-header">Total Income : $ {totalIncomeTurnover.toFixed(2)}</h5>
-            <h5>Total Expenses : $ {totalexpenseTurnover.toFixed(2)}</h5>
+            <h5 className="income-snap-header">Total Income : $ {totalIncomeTurnover.toFixed(0)}</h5>
+            <h5>Total Expenses : $ {totalexpenseTurnover.toFixed(0)}</h5>
 
             <div className="progress-bars">
               <Progress
                 className="mx-5"
                 strokeColor="#5DD64F"
                 type="circle"
-                percent={totalIncomeTurnoverPercentage.toFixed(0)}
+                percent={totalIncomeTurnoverPercentage.toFixed(2)}
               />
               <Progress
                 strokeColor="#E5572F"
                 type="circle"
-                percent={totalexpenseTurnoverPercentage.toFixed(0)}
+                percent={totalexpenseTurnoverPercentage.toFixed(2)}
               />
             </div>
           </div>
@@ -123,7 +126,7 @@ function Analytics({ transactions }) {
               return (
                amount > 0 && <div className="category-card">
                   <h5>{category}</h5>
-                  <Progress strokeColor='#0B5AD9' percent={((amount / totalexpenseTurnover) * 100).toFixed(0)} />
+                  <Progress strokeColor='#0B5AD9' percent={((amount / totalexpenseTurnover) * 100).toFixed(2)} />
                 </div>
               );
             })}

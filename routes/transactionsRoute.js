@@ -7,7 +7,7 @@ router.post("/add-transaction", async function (req, res) {
   try {
     const newtransaction = new Transaction(req.body);
     await newtransaction.save();
-    res.send("Transaction Added Successfully");
+    res.send("Entry Added");
   } catch (error) {
     res.status(500).json(error);
   }
@@ -25,7 +25,7 @@ router.post("/edit-transaction", async function (req, res) {
 router.post("/delete-transaction", async function (req, res) {
   try {
     await Transaction.findOneAndDelete({_id : req.body.transactionId})
-    res.send("Transaction Updated Successfully");
+    res.send("Entry Updated!");
   } catch (error) {
     res.status(500).json(error);
   }

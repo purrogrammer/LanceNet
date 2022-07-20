@@ -42,7 +42,7 @@ function Home() {
       setLoading(false);
     } catch (error) {
       setLoading(false);
-      message.error("Something went wrong");
+      message.error("All fields are required");
     }
   };
 
@@ -84,11 +84,11 @@ function Home() {
     },
 
     {
-      title: "Client",
-      dataIndex: "reference",
+      title: "Description",
+      dataIndex: "description",
     },
     {
-      title: "Description",
+      // title: "Edit/Delete",
       dataIndex: "actions",
       render: (text, record) => {
         return (
@@ -129,7 +129,7 @@ function Home() {
               </div>
             )}
           </div>
-          <div className="d-flex flex-column mx-5">
+          <div className="d-flex flex-column mx-4">
             <h6 className="dropdown">Sort By:</h6>
             <Select value={type} onChange={(value) => setType(value)}>
               <Select.Option value="all">All</Select.Option>
